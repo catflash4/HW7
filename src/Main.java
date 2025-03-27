@@ -74,14 +74,16 @@ public class Main {
             }
         } while (monthT < months);
         //Задача 7
-        int friday = 7;
-        for (int dayNumber = friday; dayNumber <= 31; dayNumber++) {
-            if (dayNumber % 7 ==0) {
-                System.out.println("Сегодня пятница, " + dayNumber + "-е число. Необходимо подготовить отсчет.");
-            }
+
+        int friday = 5;
+        while (friday <= 31) {
+            System.out.println("Сегодня пятница, " + friday + "-е число.Необходимо подготовить отчет");
+            friday += 7;
         }
         //Задача 8
-        for (int yearComet = 1818; yearComet <= 2100; yearComet++) {
+        int yearBefore = 1818;
+        int yearAfter = 2025 + 100;
+        for (int yearComet = yearBefore; yearComet <= yearAfter; yearComet++) {
             if (yearComet % 79 == 0) {
                 System.out.println(yearComet);
             }
