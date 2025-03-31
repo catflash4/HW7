@@ -27,11 +27,13 @@ public class Main {
         int birth = 17;
         int death = 8;
         int perPeople = 1000;
-        int birthPerYear = birth * (population/perPeople);
-        int deathPerYear = death * (population/perPeople);
+        int birthPerYear;
+        int deathPerYear;
         int year = 0;
         while (year != 10) {
-            population = population + (birthPerYear - deathPerYear);
+            birthPerYear = birth * (population/perPeople);
+            deathPerYear = death * (population/perPeople);
+            population += (birthPerYear - deathPerYear);
             year++;
             System.out.println("Год " + year + ", численность населения " + population);
         }
@@ -41,9 +43,10 @@ public class Main {
         int contribution = 15000;
         double totalF = 0;
         int monthF = 0;
+        double percentage = 0.07;
         do {
             totalF = totalF + contribution;
-            totalF = totalF + totalF*0.07;
+            totalF = totalF + (totalF*percentage);
             monthF++;
             System.out.println("Сумма накоплений за " + monthF + " месяц равна " + (int)totalF);
         } while (totalF <= 12000000 );
@@ -52,10 +55,10 @@ public class Main {
         int monthSec = 0;
         do {
             totalSec = totalSec + contribution;
-            totalSec = totalSec + totalSec*0.07;
+            totalSec = totalSec + (totalSec*percentage);
             monthSec++;
             if (monthSec % 6 == 0) {
-                System.out.println("Сумма накоплений за " + monthSec + " месяц равна " + (int) totalSec);
+                System.out.println("Сумма накоплений за " + monthSec + " месяц равна " + (int)totalSec);
             }
         } while (totalSec <= 12000000 );
 
@@ -67,12 +70,13 @@ public class Main {
         double totalT = 0;
         do {
             totalT = totalT + contribution;
-            totalT = totalT + totalT*0.07;
+            totalT = totalT + (totalT*percentage);
             monthT++;
             if (monthT % 6 == 0) {
-                System.out.println("Сумма накоплений за " + monthT + " месяц равна " + (int) totalT);
+                System.out.println("Сумма накоплений за " + monthT + " месяц равна " + (int)totalT);
             }
         } while (monthT < months);
+
         //Задача 7
 
         int friday = 5;
